@@ -3,12 +3,17 @@
 This example shows how simulation of collaborative robot workflows can be used to uncover potential hazards for the human worker. It is motivated by the problem of design-time risk assessment of robot systems. The main research questions that are addressed by this example are:
 1. How can we use simulation to identify potential hazards in an early development stage (i.e., before the system is built and commissioned in real life)?
 2. How can we identify hazardous worker behaviors that are likely to cause unsafe states wen performed in interaction with the robot system?
-![image0](https://user-images.githubusercontent.com/56551323/139921963-3091f320-2480-4386-82d1-6c160cd1defa.gif)
 
 ## Concept
 The general approach of this example is to simulate a collaborative workflow of human and robot and to evaluate a risk metric during the simulation. The risk metric is based on factors such as human-robot distance, velocity, estimated collision forces, and more. Our objective is to expose hazards by finding unsafe states (more specifically, human-robot collisions that exceed a certain force limit). We achieve this by varying the behavior of the human worker in simulation, and recording behaviors where the the risk metric exceeds a certain threshold. We vary the behavior of the human worker both on an action-level (e.g. the human worker can omit an action or switch the order of actions in the workflow) and on a motion-level (e.g., the worker can walks to a slighly different position each time). Since this results in a vast search space of possible behaviors, we use a search algorithm that is guided by the risk metric and tries to find as many high-risk behaviors as possible
 
 _Note to reviewers: At this point, we will link to the paper for more explanation once it is published)_
+
+## Example Workflow
+
+<img src="https://user-images.githubusercontent.com/56551323/139922675-bec8337b-556d-4d55-a843-07871c5d8177.gif" alt="drawing" width="500"/>
+
+In this workflow, the human model transitions to a shelf, grabs some parts, returns to the robot, reaches into the workpiece housing, and then presses a button to activate the robot. The robot puts a gearwheen into the housing. Meanwhile, the human reaches into the workpiece cover and then mounts the cover onto the housing. To simulate the effets of human error the human model can change the order of worksteps (within some boundaries, since the resulting sequences still must be feasible). To caputure the variability of human motion, the human model can also vary its position at the table (laterally, +/- 20cm), its hand velocity, and the upper body angle when reaching for the workpieces.
 
 ## Prerequisites
 This example was developed using Ubuntu 18.04 and CoppeliaSim 4.2). To run this example, you need:
