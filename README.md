@@ -20,7 +20,7 @@ After downloading the repository, you need to set some file paths in CoppeliaSim
 ### Create Action Sequences
 We use a finite state machine (FSM) to determine which action sequences of the human worker are feasible:
 
-<img src="https://user-images.githubusercontent.com/56551323/139909669-5295cd09-7c8b-432c-a03f-5b898078db2e.png" alt="drawing" width="400"/>
+<img src="https://user-images.githubusercontent.com/56551323/139909669-5295cd09-7c8b-432c-a03f-5b898078db2e.png" alt="drawing" width="600"/>
 
 An action sequence is feasible if it is accepted by the FSM. For instance, the sequence () is feasible, whereas the sequence () is infeasible.
 By running the preprocessings script 'generateActionSequences.py'. This will iterate through all possible action sequences of a certain length (here length=7), extract the feasible sequences, and write them to the file 'actionSequences.txt'.
