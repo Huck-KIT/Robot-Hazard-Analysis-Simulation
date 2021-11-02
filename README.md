@@ -25,6 +25,7 @@ We use a finite state machine (FSM) to model which action sequences of the human
 
 An action sequence is feasible if it is accepted by the FSM. For instance, the sequence (t,rP,t,rH,pB,rC,mC) is feasible, whereas the sequence () is infeasible.
 By running the preprocessings script 'generateActionSequences.py'. This will iterate through all possible action sequences of a certain length (here length=7), extract the feasible sequences, and write them to the file 'actionSequences.txt'.
+
 _Note: When you download this repositry, actionSequences.txt is already filled, so you can omit this step if you want._
 
 ### Search for Hazards
