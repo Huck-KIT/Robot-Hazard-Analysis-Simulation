@@ -19,6 +19,6 @@ After downloading the repository, you need to set some file paths in CoppeliaSim
 
 ### Create Action Sequences
 We use a finite state machine (FSM) to determine which action sequences of the human worker are feasible:
-<img src="https://user-images.githubusercontent.com/56551323/139908780-be75d364-0a08-4130-b7fb-cffe9d959284.png" alt="drawing" width="800"/>
+<img src="https://user-images.githubusercontent.com/56551323/139908780-be75d364-0a08-4130-b7fb-cffe9d959284.png" alt="drawing" width="400"/>
 
 ### Search for Hazards
