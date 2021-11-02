@@ -9,6 +9,14 @@ The general approach of this example is to simulate a collaborative workflow of 
 
 _Note to reviewers: At this point, we will link to the paper for more explanation once it is published)_
 
+## Example Workflow
+
+<img src="https://user-images.githubusercontent.com/56551323/139922675-bec8337b-556d-4d55-a843-07871c5d8177.gif" alt="drawing" width="500"/>
+
+In this workflow, the human model transitions to a shelf, grabs some parts, returns to the robot, reaches into the workpiece housing, and then presses a button to activate the robot. The robot puts a gearwheen into the housing. Meanwhile, the human reaches into the workpiece cover and then mounts the cover onto the housing. To simulate the effets of human error the human model can change the order of worksteps (within some boundaries, since the resulting sequences still must be feasible). To caputure the variability of human motion, the human model can also vary its position at the table (laterally, +/- 20cm), its hand velocity (+/- 20%), and the upper body angle when reaching for the workpieces (+/- 25%). As mentioned above, the goal is to find combinations of action sequences and motion parameters that result in a critical collision. 
+
+_Note: As you may notice by the sometimes awkward human motions, we use a simplified human model in this case. This example is not about achieving an extremely detailed simulation of human motion, it is about the general idea of searching for hazardous behaviors!_
+
 ## Prerequisites
 This example was developed using Ubuntu 18.04 and CoppeliaSim 4.2). To run this example, you need:
 - CoppeliaSim 4.2 or newer (available [here](https://www.coppeliarobotics.com/downloads))
@@ -20,12 +28,12 @@ This example was developed using Ubuntu 18.04 and CoppeliaSim 4.2). To run this 
 After downloading the repository, you need to set some file paths in CoppeliaSim (using relative paths in CoppeliaSim is somewhat error-prone, so you should set absolute paths). Open the simulation model 'simulation.ttt'. You will see a hierarchy of objects on the left. Click on the text symbol besides the object "SearchAlgorithm". This will open the script which controls the simulation. The comments in the script will direct you to set the appropriate paths.
 
 ### Create Action Sequences
-In this example, the worker can perform the following actions : Transition between stations (t), reach for parts from the shelf (rP), reach into the workpiece housing (rH), reach into the workpiece cover (rC), press the button to activate the robot (pB), and mount the cover (mC). 
+In this example, the worker can perform the following actions: Transition between stations (t), reach for parts from the shelf (rP), reach into the workpiece housing (rH), reach into the workpiece cover (rC), press the button to activate the robot (pB), and mount the cover (mC). 
 We use a finite state machine (FSM) to model which action sequences of the human worker are feasible:
 
 <img src="https://user-images.githubusercontent.com/56551323/139909669-5295cd09-7c8b-432c-a03f-5b898078db2e.png" alt="drawing" width="800"/>
 
-An action sequence is feasible if it is accepted by the FSM. For instance, the sequence (t,rP,t,rH,pB,rC,mC) is feasible, whereas the sequence () is infeasible.
+An action sequence is feasible if it is accepted by the FSM. For instance, the sequence (t,rP,t,rH,pB,rC,mC) (which btw is the nominal workflow as shown in the clip) is feasible, whereas the sequence (t,rP,rH,pB,rC,mC,t) is infeasible.
 By running the preprocessings script 'generateActionSequences.py'. This will iterate through all possible action sequences of a certain length (here length=7), extract the feasible sequences, and write them to the file 'actionSequences.txt'.
 
 _Note: When you download this repositry, actionSequences.txt is already filled, so you can omit this step if you want._
