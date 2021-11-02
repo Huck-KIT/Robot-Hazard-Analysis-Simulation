@@ -18,11 +18,12 @@ This example was developed using Ubuntu 18.04 and CoppeliaSim 4.2). To run this 
 After downloading the repository, you need to set some file paths in CoppeliaSim (using relative paths in CoppeliaSim is somewhat error-prone, so you should set absolute paths). Open the simulation model 'simulation.ttt'. You will see a hierarchy of objects on the left. Click on the text symbol besides the object "SearchAlgorithm". This will open the script which controls the simulation. The comments in the script will direct you to set the appropriate paths.
 
 ### Create Action Sequences
-We use a finite state machine (FSM) to determine which action sequences of the human worker are feasible:
+In this example, the worker can perform the following actions : Transition between stations (t), reach for parts from the shelf (rP), reach into the workpiece housing (rH), reach into the workpiece cover (rC), press the button to activate the robot (pB), and mount the cover (mC). 
+We use a finite state machine (FSM) to model which action sequences of the human worker are feasible:
 
-<img src="https://user-images.githubusercontent.com/56551323/139909669-5295cd09-7c8b-432c-a03f-5b898078db2e.png" alt="drawing" width="600"/>
+<img src="https://user-images.githubusercontent.com/56551323/139909669-5295cd09-7c8b-432c-a03f-5b898078db2e.png" alt="drawing" width="800"/>
 
-An action sequence is feasible if it is accepted by the FSM. For instance, the sequence () is feasible, whereas the sequence () is infeasible.
+An action sequence is feasible if it is accepted by the FSM. For instance, the sequence (t,rP,t,rH,pB,rC,mC) is feasible, whereas the sequence () is infeasible.
 By running the preprocessings script 'generateActionSequences.py'. This will iterate through all possible action sequences of a certain length (here length=7), extract the feasible sequences, and write them to the file 'actionSequences.txt'.
 
 ### Search for Hazards
