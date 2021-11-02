@@ -5,7 +5,7 @@ This example shows how simulation of collaborative robot workflows can be used t
 2. How can we identify hazardous worker behaviors that are likely to cause unsafe states wen performed in interaction with the robot system?
 
 ## Concept
-The general approach of this example is to simulate a collaborative workflow of human and robot and to evaluate a risk metric during the simulation. The risk metric is based on factors such as human-robot distance, velocity, estimated collision forces, and more. Our objective is to expose hazards by finding unsafe states (more specifically, human-robot collisions that exceed a certain force limit). We achieve this by varying the behavior of the human worker in simulation, and recording behaviors where the the risk metric exceeds a certain threshold. We vary the behavior of the human worker both on an action-level (e.g. the human worker can omit an action or switch the order of actions in the workflow) and on a motion-level (e.g., the worker can walks to a slighly different position each time). Since this results in a vast search space of possible behaviors, we use a search algorithm that is guided by the risk metric tries to find as many high-risk behaviors as possible (note to reviewers: At this point, we will link to the paper for more explanation once it is published).
+The general approach of this example is to simulate a collaborative workflow of human and robot and to evaluate a risk metric during the simulation. The risk metric is based on factors such as human-robot distance, velocity, estimated collision forces, and more. Our objective is to expose hazards by finding unsafe states (more specifically, human-robot collisions that exceed a certain force limit). We achieve this by varying the behavior of the human worker in simulation, and recording behaviors where the the risk metric exceeds a certain threshold. We vary the behavior of the human worker both on an action-level (e.g. the human worker can omit an action or switch the order of actions in the workflow) and on a motion-level (e.g., the worker can walks to a slighly different position each time). Since this results in a vast search space of possible behaviors, we use a search algorithm that is guided by the risk metric and tries to find as many high-risk behaviors as possible (note to reviewers: At this point, we will link to the paper for more explanation once it is published).
 
 ## Prerequisites
 This example was developed using Ubuntu 18.04 and CoppeliaSim 4.2). To run this example, you need:
@@ -14,3 +14,8 @@ This example was developed using Ubuntu 18.04 and CoppeliaSim 4.2). To run this 
 - Python 2.7 or newer
 
 ## Run the Example
+### Preparations
+
+### Create Action Sequences
+
+### Search for Hazards
