@@ -15,7 +15,11 @@ This example was developed using Ubuntu 18.04 and CoppeliaSim 4.2). To run this 
 
 ## Run the Example
 ### Preparations
+After downloading the repository, you need to set some file paths in CoppeliaSim (using relative paths in CoppeliaSim is somewhat error-prone, so you should set absolute paths). Open the simulation model 'simulation.ttt'. You will see a hierarchy of objects on the left. Click on the text symbol besides the object "SearchAlgorithm". This will open the script which controls the simulation. The comments in the script will direct you to set the appropriate paths.
 
 ### Create Action Sequences
+We use a finite state machine (FSM) to determine which action sequences of the human worker are feasible:
+![FSM](https://user-images.githubusercontent.com/56551323/139908780-be75d364-0a08-4130-b7fb-cffe9d959284.png)
+
 
 ### Search for Hazards
