@@ -26,7 +26,7 @@ This example was developed using Ubuntu 18.04 and CoppeliaSim 4.2). To run this 
 ## Run the Example
 ### Preparations
 
-![explanation_scripts](https://user-images.githubusercontent.com/56551323/140513098-da98bfc3-28a5-4f56-a2db-531b5d1fc6ab.png)
+<img src="https://user-images.githubusercontent.com/56551323/140513098-da98bfc3-28a5-4f56-a2db-531b5d1fc6ab.png" alt="drawing" width="500"/>
 
 After downloading the repository, you need to set some file paths in CoppeliaSim (using relative paths in CoppeliaSim is somewhat error-prone, so you should set absolute paths). Open the simulation model 'simulation.ttt'. You will see a hierarchy of objects on the left. First, click on the text symbol besides the object "SearchAlgorithm". This will open the script which controls the simulation. The comments in the script will direct you to set the paths to the hazardLog.txt and actionSequences.txt files. Then, click on the script symbol besides of the object "screenshotSensor" and enter the path where you want the simulation to save the screenhots (the simulation will generate screenshots of the scene when critical situations are found).
 
