@@ -1,6 +1,5 @@
 import sys
 import itertools
-sys.path.append("..")
 from FiniteStateMachine import State, Transition, Automaton
 
 ########################### DEFINE STATES ######################################
