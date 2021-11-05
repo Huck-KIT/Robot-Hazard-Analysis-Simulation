@@ -1,0 +1,1 @@
+Enter the path to this folder in the "screenshotSensor" childscript in CoppeliaSim. It will then save screenshots of hazardous situations that occur during simulation.
